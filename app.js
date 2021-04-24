@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const MONGODB_URL = 'mongodb://localhost/Users-MongoDB-data';
 
 const app = express();
+app.use(cors());
 
 mongoose.connect(MONGODB_URL, { useNewUrlParser: true });
 const con = mongoose.connection;
